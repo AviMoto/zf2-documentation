@@ -29,15 +29,15 @@ Typically, you will compose an ``EventManager`` instance in a class.
 .. code-block:: php
    :linenos:
 
-   use Zend\EventManager\EventCollection;
-   use Zend\EventManager\EventManager;
-   use Zend\EventManager\EventManagerAware;
 
-   class Foo implements EventManagerAware
+   use Zend\EventManager\EventManager;
+   use Zend\EventManager\EventManagerAwareinterface;
+
+   class Foo implements EventManagerAwareInterface
    {
        protected $events;
 
-       public function setEventManager(EventCollection $events)
+       public function setEventManager($events)
        {
            $events->setIdentifiers(array(
                __CLASS__,
